@@ -23,9 +23,7 @@ export default function App() {
     >
       <Container>
         <header className="mb-4 flex items-center justify-between">
-          <h1 className="text-3xl font-bold text-purple-500">
-            STALK UR TRACK 🧢
-          </h1>
+          <h1 className="text-3xl font-bold text-purple-500">STALK UR TRACK</h1>
           <button
             onClick={handleThemeToggle}
             className="p-[24px] scale-150 cursor-pointer transition-colors"
