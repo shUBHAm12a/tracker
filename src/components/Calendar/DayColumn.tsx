@@ -4,11 +4,10 @@ import { TaskInput } from "../Task/TaskInput";
 import {
   SortableContext,
   verticalListSortingStrategy,
-  arrayMove,
 } from "@dnd-kit/sortable";
 import { useApp } from "../../context/AppContext";
-import { toDateString } from "../../utils/dateHelpers";
 import { useDroppable } from "@dnd-kit/core";
+import { toDateString } from "../../utils/dateHelpers";
 
 interface DayColumnProps {
   date: Date;
@@ -57,24 +56,6 @@ export function DayColumn({ date, isToday }: DayColumnProps) {
       type: "UPDATE_TASK",
       payload: { id: taskId, updates: { text } },
     });
-  };
-
-  const handleDragEnd = (event: any) => {
-    const { active, over } = event;
-    if (over && active.id !== over.id) {
-      const oldIndex = dayTasks.findIndex((task) => task.id === active.id);
-      const newIndex = dayTasks.findIndex((task) => task.id === over.id);
-
-      if (oldIndex !== -1 && newIndex !== -1) {
-        const reorderedTasks = arrayMove(dayTasks, oldIndex, newIndex).map(
-          (task, index) => ({
-            ...task,
-            order: index,
-          }),
-        );
-        dispatch({ type: "REORDER_TASKS", payload: { tasks: reorderedTasks } });
-      }
-    }
   };
 
   return (

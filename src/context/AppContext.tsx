@@ -7,7 +7,7 @@ import {
 } from "react";
 import { Task, List } from "../utils/types";
 import { storage } from "../utils/storage";
-import { STORAGE_KEYS, DEFAULT_LISTS } from "../utils/constants";
+import { DEFAULT_LISTS } from "../utils/constants";
 import { v4 as uuidv4 } from "uuid";
 import { getWeekStart } from "../utils/dateHelpers";
 

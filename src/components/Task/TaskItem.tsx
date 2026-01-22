@@ -1,5 +1,5 @@
 import { Task as TaskType } from '../../utils/types'
-import { Check, Trash2, GripVertical, ExternalLink, Edit2 } from 'lucide-react'
+import { Check, Trash2, GripVertical, Edit2 } from 'lucide-react'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import { useState } from 'react'

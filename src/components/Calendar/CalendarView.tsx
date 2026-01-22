@@ -8,21 +8,13 @@ import {
   DragEndEvent,
   DragOverlay,
 } from "@dnd-kit/core";
-import { toDateString } from "../../utils/dateHelpers";
-import { useState } from "react";
 
 export function CalendarView() {
   const { state, dispatch } = useApp();
   const allDates = getWeekDates(state.currentWeekStart);
   const currentDates = allDates.slice(0, 7);
-  const [activeDragId, setActiveDragId] = useState<string | null>(null);
-
-  const handleDragStart = (event: any) => {
-    setActiveDragId(event.active.id);
-  };
 
   const handleDragEnd = (event: DragEndEvent) => {
-    setActiveDragId(null);
     const { active, over } = event;
 
     if (!over) return;
@@ -53,7 +45,6 @@ export function CalendarView() {
       <DndContext
         collisionDetection={closestCenter}
         onDragEnd={handleDragEnd}
-        onDragStart={handleDragStart}
       >
         <div className="grid grid-cols-4 gap-2 scrollbar-hide overflow-x-auto w-full">
           {currentDates.map(({ date, isToday }) => (
