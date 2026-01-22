@@ -27,10 +27,16 @@ export default function App() {
             STALK UR TRACK 🧢
           </h1>
           <button
+            onClick={handleThemeToggle}
             className="p-[24px] scale-150 cursor-pointer transition-colors"
             style={{ color: "#a855f7", background: "none", border: "none" }}
           >
-            <Expand toggled={isDarkMode} toggle={handleThemeToggle} />
+            <Expand
+              duration={750}
+              placeholder=""
+              onPointerEnterCapture={() => {}}
+              onPointerLeaveCapture={() => {}}
+            />
           </button>
         </header>
         <CalendarView />

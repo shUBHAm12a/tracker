@@ -2,7 +2,12 @@ import { getWeekDates } from "../../utils/dateHelpers";
 import { DayColumn } from "./DayColumn";
 import { WeekNavigation } from "./WeekNavigation";
 import { useApp } from "../../context/AppContext";
-import { DndContext, closestCenter, DragEndEvent, DragOverlay } from "@dnd-kit/core";
+import {
+  DndContext,
+  closestCenter,
+  DragEndEvent,
+  DragOverlay,
+} from "@dnd-kit/core";
 import { toDateString } from "../../utils/dateHelpers";
 import { useState } from "react";
 
@@ -45,8 +50,8 @@ export function CalendarView() {
   return (
     <div className="mb-8">
       <WeekNavigation />
-      <DndContext 
-        collisionDetection={closestCenter} 
+      <DndContext
+        collisionDetection={closestCenter}
         onDragEnd={handleDragEnd}
         onDragStart={handleDragStart}
       >
