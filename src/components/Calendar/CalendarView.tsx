@@ -42,11 +42,8 @@ export function CalendarView() {
   return (
     <div className="mb-8">
       <WeekNavigation />
-      <DndContext
-        collisionDetection={closestCenter}
-        onDragEnd={handleDragEnd}
-      >
-        <div className="grid grid-cols-7 gap-2 scrollbar-hide overflow-x-auto w-full">
+      <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+        <div className="grid grid-cols-4 gap-2 scrollbar-hide overflow-x-auto w-full">
           {currentDates.map(({ date, isToday }) => (
             <DayColumn key={date.toISOString()} date={date} isToday={isToday} />
           ))}
