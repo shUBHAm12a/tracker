@@ -46,7 +46,7 @@ export function CalendarView() {
         collisionDetection={closestCenter}
         onDragEnd={handleDragEnd}
       >
-        <div className="grid grid-cols-4 gap-2 scrollbar-hide overflow-x-auto w-full">
+        <div className="grid grid-cols-7 gap-2 scrollbar-hide overflow-x-auto w-full">
           {currentDates.map(({ date, isToday }) => (
             <DayColumn key={date.toISOString()} date={date} isToday={isToday} />
           ))}
